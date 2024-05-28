@@ -50,6 +50,7 @@ analyze:
   tags:
     - docker
   dependencies:
+    - build
     - test
   cache:
     paths:
