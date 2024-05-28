@@ -1,6 +1,7 @@
 stages:
   - build
   - test
+  - analyze
   - package
   - deploy
 
@@ -9,6 +10,7 @@ image: maven:3.9.6-amazoncorretto-21
 variables:
   maven_packages_cache: ".m2/repository"
   MAVEN_OPTS: "-Dmaven.repo.local=./$maven_packages_cache"
+  sonar_project: "connectfour"
 
 build:
   stage: build
@@ -42,6 +44,19 @@ test:
       - "target/site/jacoco/*"
   script:
     - mvn test
+
+analyze:
+  stage: analyze
+  tags:
+    - docker
+  dependencies:
+    - test
+  cache:
+    paths:
+      - $maven_packages_cache
+  script:
+    - mvn sonar:sonar -Dsonar.projectKey=$sonar_project -Dsonar.qualitygate.wait=true
+  allow_failure: true
 
 package:
   stage: package
