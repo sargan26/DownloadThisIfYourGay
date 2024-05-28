@@ -2,6 +2,7 @@ stages:
   - build
   - test
   - package
+  - deploy
 
 image: maven:3.9.6-amazoncorretto-21
 
@@ -58,3 +59,33 @@ package:
       - "target/*.war"
   script:
     - mvn package
+
+deploy_test:
+  stage: deploy
+  tags:
+    - shell
+  dependencies:
+    - package
+  environment:
+    name: test
+    action: start
+    url: http//localhost:8080/ConnectFour
+    on_stop: stop_test
+  when: manual
+  script:
+    - docker rm -f tomcat
+    - docker image rm -f connect-four
+    - docker build -t connect-four .
+    - docker run --rm -d --name tomcat -p 8080:8080 connect-four
+
+stop_test:
+  stage: deploy
+  tags:
+    - shell
+  environment:
+    name: test
+    action: stop
+  when: manual
+  script:
+    - docker rm -f tomcat
+    - docker image rm -f connect-four
