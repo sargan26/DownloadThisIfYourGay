@@ -7,7 +7,6 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         String input;
 
-
         ConnectFour connectFour = new ConnectFourImpl(Player.red);
         System.out.println(connectFour);
 
