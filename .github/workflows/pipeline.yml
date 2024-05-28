@@ -8,6 +8,16 @@ env:
   sonar_project: "connectfour"
 
 jobs:
+  setup-sonarqube:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v1
+
+      - name: Run SonarQube
+        run: |
+          docker run -d --name sonarqube -p 9000:9000 -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true sonarqube:10.4.1-community
+
   build:
     runs-on: ubuntu-latest
     steps:
