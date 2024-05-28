@@ -33,7 +33,7 @@ mvn tomcat7:run:
 
 Die Task 1.b haben wir auch schon in der Übung gemacht:
 
-
+![img_5.png](img_5.png)
 
 ### Task 1.c
 
