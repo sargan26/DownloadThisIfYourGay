@@ -11,6 +11,7 @@ variables:
   maven_packages_cache: ".m2/repository"
   MAVEN_OPTS: "-Dmaven.repo.local=./$maven_packages_cache"
   sonar_project: "connectfour"
+  SONAR_HOST_URL: "http://localhost:9000"
 
 build:
   stage: build
