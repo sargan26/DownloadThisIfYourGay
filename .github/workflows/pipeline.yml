@@ -18,7 +18,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '21.0.2'
-          distribution: 'Temurin'
+          distribution: 'adopt'
 
       - name: Cache Maven packages
         uses: actions/cache@v2
@@ -41,7 +41,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '21.0.2'
-          distribution: 'Temurin'
+          distribution: 'adopt'
 
       - name: Cache Maven packages
         uses: actions/cache@v2
@@ -64,7 +64,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '21.0.2'
-          distribution: 'Temurin'
+          distribution: 'adopt'
 
       - name: Cache Maven packages
         uses: actions/cache@v2
@@ -87,7 +87,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '21.0.2'
-          distribution: 'Temurin'
+          distribution: 'adopt'
 
       - name: Cache Maven packages
         uses: actions/cache@v2
