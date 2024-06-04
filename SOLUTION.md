@@ -31,10 +31,19 @@ mvn tomcat7:run:
 
 ### Task 1.b
 
-Die Task 1.b haben wir auch schon in der Übung gemacht:
+Die Task 1.b haben wir auch schon in der Übung gemacht. Also die .yml File schreiben mit dem Stages und 
+Umgebungsvariablen etc. Den gitlab runner in der WSL starten. Die Übergabe der Artifacts eingerichtet...
+
 
 ![img_5.png](img_5.png)
 
 ### Task 1.c
 
-<!--- describe your solution here --->
+Ich habe die Schritte ähnlich zur Übung wiederholt. Schauen das die Container laufen. In SonarQube ein neues Project 
+für Github erstellt und SONAR_TOKEN / SONAR_URL als Secret bei Github eingetragen.
+
+Dann einen Github runner in der WSL installiert, einen neuen Runner nutzer erstellt der dann den Runner ausführt.
+
+![img_7.png](img_7.png)
+
+![img_8.png](img_8.png)
