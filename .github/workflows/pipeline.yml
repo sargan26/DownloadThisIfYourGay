@@ -29,6 +29,11 @@ jobs:
           java-version: '21.0.2'
           distribution: 'adopt'
 
+      - name: Install Maven
+        run: |
+          sudo apt update
+          sudo apt install -y maven
+
       - name: Cache Maven packages
         uses: actions/cache@v2
         with:
