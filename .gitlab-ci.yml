@@ -56,6 +56,7 @@ analyze:
     paths:
       - $maven_packages_cache
   script:
+    - mvn compile
     - mvn sonar:sonar -Dsonar.projectKey=$sonar_project -Dsonar.qualitygate.wait=true -Dsonar.java.binaries=target/classes
   allow_failure: true
 
