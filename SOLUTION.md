@@ -34,8 +34,7 @@ mvn tomcat7:run:
 Die Task 1.b haben wir auch schon in der Übung gemacht. Also die .yml File schreiben mit dem Stages und 
 Umgebungsvariablen etc. Den gitlab runner in der WSL starten. Die Übergabe der Artifacts eingerichtet...
 
-
-![img_5.png](img_5.png)
+![img_11.png](img_11.png)
 
 ### Task 1.c
 
