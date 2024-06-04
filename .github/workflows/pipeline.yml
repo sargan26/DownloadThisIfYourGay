@@ -9,8 +9,9 @@ on:
       - main
 
 env:
-  MAVEN_OPTS: "-Dmaven.repo.local=./.m2/repository"
-  sonar_project: "connectfour"
+  maven_packages_cache: ".m2/repository"
+  MAVEN_OPTS: "-Dmaven.repo.local=./$maven_packages_cache"
+  sonar_project: "ConnectFourGithub"
   SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
   SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
