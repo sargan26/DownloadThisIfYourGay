@@ -12,10 +12,12 @@ env:
   MAVEN_OPTS: "-Dmaven.repo.local=./.m2/repository"
   sonar_project: "connectfour"
   SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions: read-all
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
