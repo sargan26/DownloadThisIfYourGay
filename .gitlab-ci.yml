@@ -1,6 +1,3 @@
-#include:
-#  - local: '.gitlab-ci-code-quality.yml'
-
 stages:
   - build
   - test
@@ -17,9 +14,6 @@ variables:
 
 build:
   stage: build
-  only:
-    refs:
-      - main
   tags:
     - docker
   cache:
@@ -35,9 +29,6 @@ build:
 
 test:
   stage: test
-  only:
-    refs:
-      - main
   tags:
     - docker
   dependencies:
@@ -56,9 +47,6 @@ test:
 
 analyze:
   stage: analyze
-  only:
-    refs:
-      - main
   tags:
     - docker
   dependencies:
@@ -73,9 +61,6 @@ analyze:
 
 package:
   stage: package
-  only:
-    refs:
-      - main
   tags:
     - docker
   dependencies:
