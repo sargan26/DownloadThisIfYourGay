@@ -1,0 +1,16 @@
+include:
+  - template: Jobs/Code-Quality.gitlab-ci.yml
+
+code_quality:
+  services:
+  tags:
+    - code-quality
+  rules:
+    - if: $CI_PIPELINE_SOURCE = "merge_request_event"
+
+code_quality_html:
+  extends: code_quality
+  variable:
+    REPORT_FORMAT: html
+  artifacts:
+    paths: [gl-code-quality-report.html]

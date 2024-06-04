@@ -1,23 +1,18 @@
 name: CI/CD Pipeline
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 env:
   MAVEN_OPTS: "-Dmaven.repo.local=./.m2/repository"
-  SONAR_HOST_URL: "http://localhost:9000"
   sonar_project: "connectfour"
 
 jobs:
-  setup-sonarqube:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up Docker
-        uses: docker/setup-buildx-action@v1
-
-      - name: Run SonarQube
-        run: |
-          docker run -d --name sonarqube -p 9000:9000 -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true sonarqube:10.4.1-community
-
   build:
     runs-on: ubuntu-latest
     steps:
@@ -121,4 +116,3 @@ jobs:
           docker rm -f tomcat
           docker image rm -f connect-four
           docker build -t connect-four .
-          docker run --rm -d --name tomcat -p 8080:8080 connect-four
