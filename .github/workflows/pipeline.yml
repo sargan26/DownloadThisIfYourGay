@@ -11,6 +11,7 @@ on:
 env:
   MAVEN_OPTS: "-Dmaven.repo.local=./.m2/repository"
   sonar_project: "connectfour"
+  SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
 
 jobs:
   build:
