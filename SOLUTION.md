@@ -41,7 +41,9 @@ Umgebungsvariablen etc. Den gitlab runner in der WSL starten. Die Übergabe der 
 Ich habe die Schritte ähnlich zur Übung wiederholt. Schauen das die Container laufen. In SonarQube ein neues Project 
 für Github erstellt und SONAR_TOKEN / SONAR_URL als Secret bei Github eingetragen.
 
-Dann einen Github runner in der WSL installiert, einen neuen Runner nutzer erstellt der dann den Runner ausführt.
+Dann einen Github runner in der WSL installiert, einen neuen Runner nutzer erstellt der dann den Runner ausführt. 
+Was etwas sehr nervig war, bei einem Befehl den Runner auszuführen durfte man nicth sudo sein, aber wenn die 
+Pipeline dann läuft, fragt der Runner nach dem Passwort für die Sudo rechte jedes mal.
 
 ![img_7.png](img_7.png)
 

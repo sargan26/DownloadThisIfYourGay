@@ -125,6 +125,6 @@ jobs:
 
       - name: Deploy
         run: |
-          docker rm -f tomcat
-          docker image rm -f connect-four
-          docker build -t connect-four .
+          sudo docker rm -f tomcat
+          sudo docker image rm -f connect-four
+          sudo docker build -t connect-four .
