@@ -87,6 +87,9 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
+      - name: Compile
+        run: mvn compile
+
       - name: Analyze
         run: mvn sonar:sonar -Dsonar.projectKey=$sonar_project -Dsonar.qualitygate.wait=true
 
