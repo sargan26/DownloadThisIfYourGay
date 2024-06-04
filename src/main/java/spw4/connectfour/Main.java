@@ -11,7 +11,7 @@ public class Main {
         System.out.println(connectFour);
 
         while (!connectFour.isGameOver()) {
-            System.out.print("command [1 .. 7, (r)estart, (q)uit, (h)elp] > ");
+            System.out.print("command [1 .. 7,  (r)estart, (q)uit, (h)elp] > ");
             input = scanner.nextLine();
 
             switch (input) {

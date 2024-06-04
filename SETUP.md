@@ -6,7 +6,7 @@ SPW4 - Exercise 3 Setup Instructions
 ### Execute GitLab runner locally in a WSL 2 shell:
 
 1. Start WSL 2 shell, get root privileges, update and install packages:
-   ```shell
+   ```
    wsl -d Debian
    sudo -i
    apt update
