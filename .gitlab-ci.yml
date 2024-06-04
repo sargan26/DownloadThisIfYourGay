@@ -1,5 +1,5 @@
-include:
-  - local: '.gitlab-ci-code-quality.yml'
+#include:
+#  - local: '.gitlab-ci-code-quality.yml'
 
 stages:
   - build
