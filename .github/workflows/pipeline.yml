@@ -94,7 +94,7 @@ jobs:
         run: mvn sonar:sonar -Dsonar.projectKey=$sonar_project -Dsonar.qualitygate.wait=true
 
   package:
-    needs: analyze
+    needs: test
     runs-on: self-hosted
     steps:
       - name: Checkout code
@@ -120,7 +120,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: ConnectFour.war
-          path: target/ConnectFour.war
+          path: target/*.war
 
   deploy:
     needs: package
@@ -140,3 +140,4 @@ jobs:
           sudo docker rm -f tomcat
           sudo docker image rm -f connect-four
           sudo docker build -t connect-four .
+          sudo docker run --rm -d --name tomcat -p 8080:8080 connect-four

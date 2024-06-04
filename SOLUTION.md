@@ -48,3 +48,9 @@ Pipeline dann läuft, fragt der Runner nach dem Passwort für die Sudo rechte je
 ![img_7.png](img_7.png)
 
 ![img_8.png](img_8.png)
+
+Leider gibt es noch einen Fehler beim Deployen, den ich nach sehr langer Fehlersuche immer noch nicht beheben konnte :/
+
+![img_12.png](img_12.png)
+
+![img_13.png](img_13.png)
