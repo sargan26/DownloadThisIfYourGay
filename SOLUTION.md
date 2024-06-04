@@ -3,7 +3,7 @@ SPW4 - Exercise 3
 
 Name: Daniel Mitterlehner
 
-Effort in hours: 5h
+Effort in hours: 8h
 
 ## 1. Connect Four Web Application and CI/CD Pipeline
 
@@ -42,15 +42,11 @@ Ich habe die Schritte ähnlich zur Übung wiederholt. Schauen das die Container 
 für Github erstellt und SONAR_TOKEN / SONAR_URL als Secret bei Github eingetragen.
 
 Dann einen Github runner in der WSL installiert, einen neuen Runner nutzer erstellt der dann den Runner ausführt. 
-Was etwas sehr nervig war, bei einem Befehl den Runner auszuführen durfte man nicth sudo sein, aber wenn die 
-Pipeline dann läuft, fragt der Runner nach dem Passwort für die Sudo rechte jedes mal.
 
 ![img_7.png](img_7.png)
 
 ![img_8.png](img_8.png)
 
-Leider gibt es noch einen Fehler beim Deployen, den ich nach sehr langer Fehlersuche immer noch nicht beheben konnte :/
+Nach langem Tüfteln, Fehler googeln und ausbessern funktioniert die Pipeline endlich vollständig:
 
-![img_12.png](img_12.png)
-
-![img_13.png](img_13.png)
+![img_14.png](img_14.png)
